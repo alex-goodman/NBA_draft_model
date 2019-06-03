@@ -1,0 +1,61 @@
+Rk	Pk	Tm	Player	Pos	College	Yrs	G	MP	PTS	TRB	AST	FG%	3P%	FT%	MP	PTS	TRB	AST	WS	WS/48	BPM	VORP
+1	1	PHI	Markelle Fultz\fultzma01	PG	University of Washington	2	33	680	255	113	112	0.414	0.267	0.534	20.6	7.7	3.4	3.4	0.5	0.038	-3.1	-0.2
+2	2	LAL	Lonzo Ball\balllo01	PG	University of California Los Angeles	2	99	3203	993	611	631	0.38	0.315	0.437	32.4	10	6.2	6.4	3.5	0.053	1.2	2.6
+3	3	BOS	Jayson Tatum\tatumja01	SF	Duke University	2	159	4893	2355	879	296	0.461	0.4	0.84	30.8	14.8	5.5	1.9	12	0.118	0.1	2.6
+4	4	PHO	Josh Jackson\jacksjo02	SF	University of Kansas	2	156	3947	1922	698	302	0.415	0.294	0.65	25.3	12.3	4.5	1.9	-2.4	-0.029	-4.6	-2.5
+5	5	SAC	De'Aaron Fox\foxde01	PG	University of Kentucky	2	154	4572	2243	508	910	0.439	0.345	0.725	29.7	14.6	3.3	5.9	5	0.053	-1.3	0.8
+6	6	ORL	Jonathan Isaac\isaacjo01	SF	Florida State University	2	102	2532	865	510	98	0.419	0.327	0.806	24.8	8.5	5	1	4.2	0.08	-0.3	1.1
+7	7	MIN	Lauri Markkanen\markkla01	PF	University of Arizona	2	120	3702	2007	978	154	0.432	0.362	0.859	30.9	16.7	8.2	1.3	6.1	0.079	-1.9	0.1
+8	8	NYK	Frank Ntilikina\ntilila01	PG		2	121	2610	709	264	371	0.354	0.305	0.735	21.6	5.9	2.2	3.1	-1.8	-0.033	-4.5	-1.7
+9	9	DAL	Dennis Smith\smithde03	PG	North Carolina State University	2	122	3557	1770	415	610	0.407	0.316	0.668	29.2	14.5	3.4	5	-0.7	-0.009	-2.4	-0.3
+10	10	SAC	Zach Collins\colliza01	C	Gonzaga University	2	143	2401	804	545	123	0.441	0.321	0.72	16.8	5.6	3.8	0.9	3.6	0.072	-1.3	0.4
+11	11	CHO	Malik Monk\monkma01	SG	University of Kentucky	2	136	2112	1074	203	208	0.376	0.335	0.871	15.5	7.9	1.5	1.5	0.3	0.007	-4.1	-1.1
+12	12	DET	Luke Kennard\kennalu01	SG	Duke University	2	136	2900	1171	359	238	0.441	0.403	0.847	21.3	8.6	2.6	1.8	5.1	0.085	-1.5	0.4
+13	13	DEN	Donovan Mitchell\mitchdo01	SG	University of Louisville	2	156	5236	3445	612	613	0.434	0.351	0.805	33.6	22.1	3.9	3.9	10.2	0.094	0.8	3.7
+14	14	MIA	Bam Adebayo\adebaba01	PF	University of Kentucky	2	151	3281	1206	978	285	0.55	0.136	0.728	21.7	8	6.5	1.9	11	0.161	1.8	3.2
+15	15	POR	Justin Jackson\jacksju01	SF	University of North Carolina	2	149	3120	1036	399	170	0.445	0.335	0.765	20.9	7	2.7	1.1	3.9	0.059	-2.5	-0.4
+16	16	CHI	Justin Patton\pattoju01	C	Creighton University	2	4	25	7	6	3	0.333	0	0.5	6.3	1.8	1.5	0.8	0	0.09	0.4	0
+17	17	MIL	D.J. Wilson\wilsodj01	PF	University of Michigan	2	70	953	301	232	55	0.423	0.364	0.551	13.6	4.3	3.3	0.8	1.8	0.09	-1.7	0.1
+18	18	IND	T.J. Leaf\leaftj01	PF	University of California Los Angeles	2	111	981	381	207	33	0.511	0.356	0.617	8.8	3.4	1.9	0.3	2.4	0.117	-2.8	-0.2
+19	19	ATL	John Collins\collijo01	PF	Wake Forest University	2	135	3614	1965	1136	219	0.566	0.346	0.743	26.8	14.6	8.4	1.6	11.4	0.152	1.5	3.2
+20	20	POR	Harry Giles\gilesha01	PF	Duke University	1	58	820	408	222	85	0.503	0	0.637	14.1	7	3.8	1.5	1	0.056	-2.1	0
+21	21	OKC	Terrance Ferguson\fergute01	SG		2	135	2694	702	188	91	0.425	0.356	0.754	20	5.2	1.4	0.7	4	0.072	-2.1	-0.1
+22	22	BRK	Jarrett Allen\allenja01	C	University of Texas at Austin	2	152	3537	1460	1060	159	0.59	0.183	0.732	23.3	9.6	7	1	11.9	0.161	1.6	3.2
+23	23	TOR	OG Anunoby\anunoog01	SF	Indiana University	2	141	2833	907	381	102	0.461	0.351	0.605	20.1	6.4	2.7	0.7	5	0.085	-0.3	1.2
+24	24	UTA	Tyler Lydon\lydonty01	PF	Syracuse University	2	26	96	23	18	6	0.5	0.4	0.333	3.7	0.9	0.7	0.2	0.2	0.084	-2.6	0
+25	25	ORL	Anzejs Pasecniks\pasecan01	C																		
+26	26	POR	Caleb Swanigan\swanica01	PF	Purdue University	2	48	367	104	118	25	0.372	0.133	0.667	7.6	2.2	2.5	0.5	-0.2	-0.031	-6.6	-0.4
+27	27	BRK	Kyle Kuzma\kuzmaky01	PF	University of Utah	2	147	4715	2550	865	319	0.453	0.335	0.731	32.1	17.3	5.9	2.2	7	0.071	-1.5	0.6
+28	28	LAL	Tony Bradley\bradlto01	PF	University of North Carolina	2	12	65	25	26	2	0.407	0	0.75	5.4	2.1	2.2	0.2	0.1	0.087	-4.7	0
+29	29	SAS	Derrick White\whitede01	PG	University of Colorado	2	84	1867	717	273	272	0.479	0.361	0.762	22.2	8.5	3.3	3.2	4.1	0.106	0.9	1.4
+30	30	UTA	Josh Hart\hartjo01	SG	Villanova University	2	130	3176	1021	511	173	0.435	0.361	0.695	24.4	7.9	3.9	1.3	5.5	0.083	-0.4	1.3
+31	31	CHO	Frank Jackson\jacksfr01	PG	Duke University	1	61	1169	495	134	69	0.434	0.314	0.74	19.2	8.1	2.2	1.1	0.4	0.018	-5	-0.9
+32	32	PHO	Davon Reed\reedda01	SG	University of Miami	2	31	289	75	45	16	0.307	0.31	0.667	9.3	2.4	1.5	0.5	-0.2	-0.039	-6.3	-0.3
+33	33	ORL	Wesley Iwundu\iwundwe01	SF	Kansas State University	2	130	2253	568	321	130	0.419	0.304	0.787	17.3	4.4	2.5	1	2.5	0.054	-3	-0.6
+34	34	SAC	Frank Mason\masonfr01	PG	University of Kansas	2	90	1419	608	173	231	0.392	0.3	0.773	15.8	6.8	1.9	2.6	0.9	0.029	-3.7	-0.6
+35	35	ORL	Ivan Rabb\rabbiv01	PF	University of California	2	85	1237	485	364	86	0.555	0.2	0.743	14.6	5.7	4.3	1	3.2	0.125	-1	0.3
+36	36	PHI	Jonah Bolden\boldejo01	PF		1	44	639	207	165	40	0.494	0.354	0.481	14.5	4.7	3.8	0.9	1.4	0.106	1.2	0.5
+37	37	BOS	Semi Ojeleye\ojelese01	SF	Southern Methodist University	2	129	1744	381	247	43	0.382	0.318	0.613	13.5	3	1.9	0.3	1.9	0.051	-3.7	-0.8
+38	38	CHI	Jordan Bell\belljo01	PF	University of Oregon	2	125	1597	485	391	178	0.57	0	0.647	12.8	3.9	3.1	1.4	4.5	0.136	1.7	1.5
+39	39	PHI	Jawun Evans\evansja01	PG	Oklahoma State University	2	56	843	237	96	110	0.345	0.263	0.776	15.1	4.2	1.7	2	-0.4	-0.022	-5.1	-0.7
+40	40	NOP	Dwayne Bacon\bacondw01	SG	Florida State University	2	96	1472	491	213	85	0.432	0.377	0.761	15.3	5.1	2.2	0.9	1.1	0.034	-4.6	-1
+41	41	ATL	Tyler Dorsey\dorsety01	SG	University of Oregon	2	104	1672	701	243	135	0.389	0.35	0.669	16.1	6.7	2.3	1.3	1	0.03	-4.1	-0.9
+42	42	UTA	Thomas Bryant\bryanth01	PF	Indiana University	2	87	1568	780	471	98	0.606	0.312	0.767	18	9	5.4	1.1	5.6	0.172	1.3	1.3
+43	43	HOU	Isaiah Hartenstein\harteis01	PF		1	28	221	53	47	15	0.488	0.333	0.786	7.9	1.9	1.7	0.5	0.5	0.101	-0.6	0.1
+44	44	NYK	Damyean Dotson\dotsoda01	SG	University of Oregon	2	117	2478	961	346	166	0.421	0.361	0.736	21.2	8.2	3	1.4	2.1	0.041	-2.5	-0.3
+45	45	HOU	Dillon Brooks\brookdi01	SF	University of Oregon	2	100	2680	1033	288	151	0.435	0.359	0.745	26.8	10.3	2.9	1.5	1.2	0.021	-3.5	-1
+46	46	PHI	Sterling Brown\brownst02	SG	Southern Methodist University	2	112	1810	589	327	109	0.439	0.357	0.758	16.2	5.3	2.9	1	2.8	0.074	-2.6	-0.3
+47	47	IND	Ike Anigbogu\anigbik01	C	University of California Los Angeles	2	14	36	13	12	1	0.333		0.833	2.6	0.9	0.9	0.1	0	0.057	-6.8	0
+48	48	MIL	Sindarius Thornwell\thornsi01	SG	University of South Carolina	2	137	1469	344	184	86	0.415	0.342	0.689	10.7	2.5	1.3	0.6	1	0.034	-2.1	0
+49	49	DEN	Vlatko Cancar\cancavl01	SF																		
+50	50	PHI	Mathias Lessort\lessoma01	PF																		
+51	51	DEN	Monte Morris\morrimo01	PG	Iowa State University	2	85	1995	861	196	304	0.494	0.412	0.807	23.5	10.1	2.3	3.6	6.4	0.153	0.2	1.1
+52	52	NOP	Edmond Sumner\sumneed01	PG	Xavier University	2	24	212	68	25	10	0.354	0.259	0.625	8.8	2.8	1	0.4	0.1	0.024	-3.6	-0.1
+53	53	BOS	Kadeem Allen\allenka01	SG	University of Arizona	2	37	523	208	62	88	0.436	0.362	0.778	14.1	5.6	1.7	2.4	0.9	0.08	-2.2	0
+54	54	PHO	Alec Peters\peteral01	SF	Valparaiso University	1	20	225	82	37	12	0.378	0.31	0.8	11.3	4.1	1.9	0.6	0.3	0.055	-3.3	-0.1
+55	55	UTA	Nigel Williams-Goss\willini01	PG	Gonzaga University																	
+56	56	BOS	Jabari Bird\birdja01	SG	University of California	1	13	115	39	19	8	0.577	0.429	0.462	8.8	3	1.5	0.6	0.2	0.098	-2.1	0
+57	57	BRK	Aleksandar Vezenkov\vezenal01	PF																		
+58	58	NYK	Ognjen Jaramaz\jaramog01	PG																		
+59	59	SAS	Jaron Blossomgame\blossja01	SF	Clemson University	1	27	439	114	98	13	0.443	0.256	0.769	16.3	4.2	3.6	0.5	0.3	0.03	-4.5	-0.3
+60	60	ATL	Alpha Kaba\kabaal01	PF																		

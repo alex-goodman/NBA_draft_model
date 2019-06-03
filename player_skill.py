@@ -6,20 +6,25 @@ from sklearn.metrics import r2_score
 # the name of the file with the college (feature) data
 COLLEGE_DATA_FILE = 'last_four_seasons.csv'
 
-# the name of the file with the pro (target) data
-DRAFT_DATA_FILE = 'last_four_drafts.csv'
+# the info for the file with the pro (target) data
+DRAFT_PREFIX = '_draft.csv'
+DRAFT_YEARS = ['2015', '2016', '2017', '2018']
 
 # read in data
 college_data = pd.read_csv(COLLEGE_DATA_FILE)
-draft_data = pd.read_csv(DRAFT_DATA_FILE)
+draft_data_test = pd.read_csv(DRAFT_YEARS[0] + DRAFT_PREFIX)
+draft_data = pd.read_csv(DRAFT_YEARS[1] + DRAFT_PREFIX)
+for i in range(2, len(DRAFT_YEARS)):
+	next_year = pd.read_csv(DRAFT_YEARS[i] + DRAFT_PREFIX)
+	draft_data = pd.concat([draft_data, next_year])
 
 # get rid of messy IDs in player names for the join
 college_data['Player'] = college_data['Player'].apply(lambda n: n[:n.find('\\')])
 draft_data['Player'] = draft_data['Player'].apply(lambda n: n[:n.find('\\')])
 
 # get pro info
-train_joined = draft_data[60:].set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
-test_joined = draft_data[:60].set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
+train_joined = draft_data.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
+test_joined = draft_data_test.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
 
 # then drop unnecessary columns
 drop_cols = ['Rk_coll', 'Pk', 'Tm', 'College', 'Yrs', 'PTS',
@@ -41,6 +46,9 @@ predicted_ranking = [[test_df.index[i], predictions[i]] for i in range(len(predi
 predicted_ranking.sort(key=lambda l: l[1], reverse=True)
 #r2 = r2_score(test_target, predictions)
 #print(r2)
+
+# by here we have predicted WS ranking
+
 
 for i, r in enumerate(predicted_ranking):
 	print(i + 1, r[0], str(r[1]))
