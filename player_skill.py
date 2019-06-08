@@ -1,30 +1,46 @@
 import numpy as np
 import pandas as pd
+import copy
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.linear_model import LinearRegression
+from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import r2_score
 
+##################### CONSTANTS ######################
 # the name of the file with the college (feature) data
 COLLEGE_DATA_FILE = 'last_four_seasons.csv'
 
 # the info for the file with the pro (target) data
-DRAFT_PREFIX = '_draft.csv'
-DRAFT_YEARS = ['2015', '2016', '2017', '2018']
+DRAFT_SUFFIX = '_draft.csv'
+DRAFT_YEARS = ['2014', '2015', '2016', '2017', '2018']
 
+# info for the position picking (team needs) classifier
+TEAMS = ['76ers', 'Bucks', 'Bulls', 'Cavaliers', 'Celtics', 'Clippers', 'Grizzlies', 'Hawks', 'Heat', 'Hornets', 'Jazz', 'Kings', 'Knicks', 'Lakers', 'Magic', 'Mavericks', 'Nets', 'Nuggets', 'Pacers', 'Pelicans', 'Pistons', 'Raptors', 'Rockets', 'Spurs', 'Suns', 'Thunder', 'Timberwolves', 'TrailBlazers', 'Warriors', 'Wizards']
+TEAM_CODES = ['PHI', 'MIL', 'CHI', 'CLE', 'BOS', 'LAC', 'MEM', 'ATL', 'MIA', 'CHO', 'UTA', 'SAC', 'NYK', 'LAL', 'ORL', 'DAL', 'BRK', 'DEN', 'IND', 'NOP', 'DET', 'TOR', 'HOU', 'SAS', 'PHO', 'OKC', 'MIN', 'POR', 'GSW', 'WAS']
+codes_dict = {TEAMS[i]: TEAM_CODES[i] for i in range(len(TEAM_CODES))}
+YEARS = ['2014', '2015', '2016', '2017', '2018']
+
+############# BEGINNING OF PLAYER MODEL ################
 # read in data
 college_data = pd.read_csv(COLLEGE_DATA_FILE)
-draft_data_test = pd.read_csv(DRAFT_YEARS[0] + DRAFT_PREFIX)
-draft_data = pd.read_csv(DRAFT_YEARS[1] + DRAFT_PREFIX)
+player_draft_data_test = pd.read_csv(DRAFT_YEARS[0] + DRAFT_SUFFIX)
+player_draft_data = pd.read_csv(DRAFT_YEARS[1] + DRAFT_SUFFIX, sep='\t')
 for i in range(2, len(DRAFT_YEARS)):
-	next_year = pd.read_csv(DRAFT_YEARS[i] + DRAFT_PREFIX)
-	draft_data = pd.concat([draft_data, next_year])
+	if (i == len(DRAFT_YEARS) - 1):
+		next_year = pd.read_csv(DRAFT_YEARS[i] + DRAFT_SUFFIX)
+	else:
+		next_year = pd.read_csv(DRAFT_YEARS[i] + DRAFT_SUFFIX, sep='\t')
+	player_draft_data = pd.concat([player_draft_data, next_year])
 
 # get rid of messy IDs in player names for the join
 college_data['Player'] = college_data['Player'].apply(lambda n: n[:n.find('\\')])
-draft_data['Player'] = draft_data['Player'].apply(lambda n: n[:n.find('\\')])
+print(player_draft_data['Player'])
+player_draft_data['Player'] = player_draft_data['Player'].apply(lambda n: n[:n.find('\\')])
+player_draft_data_test['Player'] = player_draft_data_test['Player'].apply(lambda n: n[:n.find('\\')])
 
 # get pro info
-train_joined = draft_data.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
-test_joined = draft_data_test.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
+train_joined = player_draft_data.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
+test_joined = player_draft_data_test.set_index('Player').join(college_data.set_index('Player'), lsuffix='_pro', rsuffix='_coll')
 
 # then drop unnecessary columns
 drop_cols = ['Rk_coll', 'Pk', 'Tm', 'College', 'Yrs', 'PTS',
@@ -36,22 +52,87 @@ test_df = test_joined.drop(drop_cols, axis=1).dropna()
 # divide into feature and target (X and Y) arrays
 train_target = train_df['WS_pro'].to_numpy(dtype=float)
 test_target = test_df['WS_pro'].to_numpy(dtype=float)
-train_features = train_df.drop('WS_pro', axis=1).to_numpy(dtype=float)
-test_features = test_df.drop('WS_pro', axis=1).to_numpy(dtype=float)
+train_pos, test_pos = train_df['Pos'], test_df['Pos']
+train_features = train_df.drop(['WS_pro', 'Pos'], axis=1).to_numpy(dtype=float)
+test_features = test_df.drop(['WS_pro', 'Pos'], axis=1).to_numpy(dtype=float)
 
 # try a linear regressor, see how bad it is?
 regressor = LinearRegression().fit(train_features, train_target)
 predictions = regressor.predict(test_features)
-predicted_ranking = [[test_df.index[i], predictions[i]] for i in range(len(predictions))]
+predicted_ranking = [[test_df.index[i], predictions[i], test_pos.iloc[i]] for i in range(len(predictions))]
 predicted_ranking.sort(key=lambda l: l[1], reverse=True)
 #r2 = r2_score(test_target, predictions)
 #print(r2)
 
-# by here we have predicted WS ranking
+########### END OF PLAYER MODEL ###############
 
+########## BEGINNING OF TEAM MODEL ############
+teams_dict = {}
+draft_data = {}
+for year in DRAFT_YEARS[1:]:
+	if year != '2018':
+		draft_data[year] = pd.read_csv(year + '_draft.csv', sep='\t').set_index('Tm')
+	else:
+		draft_data[year] = pd.read_csv(year + '_draft.csv').set_index('Tm')
 
-for i, r in enumerate(predicted_ranking):
-	print(i + 1, r[0], str(r[1]))
+draft_data['2014'] = pd.read_csv('2014_draft.csv').set_index('Tm') # different format for the most recent draft
+
+for t in TEAMS:
+	for year in YEARS:
+		if (t == 'Hornets' and year == '2014'):
+			team = 'Bobcats'
+		else:
+			team = t
+		roster = pd.read_csv('team_info/' + team + 'Roster' + year + '.csv')
+		advanced = pd.read_csv('team_info/' + team + 'Advanced' + year + '.csv')
+		advanced['Player'] = advanced['Unnamed: 1']
+		advanced.drop('Unnamed: 1', axis=1, inplace=True)
+		joined = roster.set_index('Player').join(advanced.set_index('Player'))
+		joined = joined[['Pos', 'WS']]
+		joined = pd.get_dummies(joined['Pos']).join(joined).drop('Pos', axis=1)
+		# get the position of the player they actually drafted first
+		team_code = codes_dict[team] if team != 'Bobcats' else 'CHH'
+		if (team_code in draft_data[year].index):
+			position = draft_data[year].loc[team_code].iloc[0].loc['Pos'] if (len(draft_data[year].loc[team_code].shape) > 1) else draft_data[year].loc[team_code].loc['Pos']
+		else:
+			position = None
+		teams_dict[team + '_' + year] = [joined.sort_values(by=['WS'], ascending=False), position]
+ 
+# Make train and test data sets
+train_inputs = [v[0].to_numpy()[:12].flatten() for k, v in teams_dict.items() if v[1] is not None and '2014' not in k]
+test_inputs = [v[0].to_numpy()[:12].flatten() for k, v in teams_dict.items() if v[1] is not None and '2014' in k]
+train_outputs = [v[1] for k, v in teams_dict.items() if v[1] is not None and '2014' not in k]
+test_outputs = [v[1] for k, v in teams_dict.items() if v[1] is not None and '2014' in k]
+
+# preprocess outputs (positions) to be one-hot vectors
+enc = OneHotEncoder()
+train_target = enc.fit_transform(np.array(train_outputs).reshape(-1, 1))
+test_target = enc.transform(np.array(test_outputs).reshape(-1, 1))
+
+# instantiate and run the classifier
+classifier = MLPClassifier(max_iter=5000)
+classifier.fit(train_inputs, train_target)
+predicted_position = {draft_data['2014'].index.unique()[i]: classifier.predict_proba(test_inputs)[i] for i in range(len(draft_data['2014'].index.unique()))}
+#predicted = [enc.categories_[0][np.argmax(a)] for a in classifier.predict_proba(test_inputs)]
+#print(classifier.score(test_inputs, test_target))
+
+taken = set()
+predicted_draft = []
+for t in draft_data['2014'].index:
+	pos_ranks = {enc.categories_[0][i]: predicted_position[t][i] for i in range(len(enc.categories_[0]))}
+	ranking_copy = copy.deepcopy(predicted_ranking)
+	for player in ranking_copy:
+		player.append(pos_ranks[player[2]])
+		player.append(player[1] * player[3])
+	ranking_copy.sort(key=lambda k: k[4], reverse=True)
+	for prospect in ranking_copy:
+		if prospect[0] not in taken:
+			predicted_draft.append([t, prospect[0], prospect[2], prospect[4]])
+			taken.add(prospect[0])
+			break
+
+for i, p in enumerate(predicted_draft):
+	print(str(i + 1) + '\t' + p[1] + '\t' + str(p[3]))
 
 '''
 Predicted Pick | Actual Pick | Error | Player | Predicted WS

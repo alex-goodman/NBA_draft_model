@@ -1,0 +1,47 @@
+Predicted	Error	WS + Position Fit		error			Actual				Predicted	Error	Just WS			Error	
+1		Bruce Brown	4.537477803	29		1	Deandre Ayton\aytonde01				1		Mohamed Bamba		15.93811221	2	
+2		Alize Johnson	2.02863719	34		2	Trae Young\youngtr01				2		Deandre Ayton		9.063310219	1	
+3		Zhaire Smith	5.582920583	8		3	Mohamed Bamba\bambamo01				3		Alize Johnson		8.036329099	33	
+4		Jarred Vanderbilt	0.78589059	25		4	Collin Sexton\sextoco01				4		Jarred Vanderbilt		7.331831982	25	
+5		Jacob Evans	2.72913831	17		5	Kevin Knox\knoxke01				5		Bruce Brown		5.704142725	25	
+6		Mohamed Bamba	2.853690607	3		6	Mikal Bridges\bridgmi01				6		Zhaire Smith		5.619596233	5	
+7		Keita Bates-Diop	4.098308332	27		7	Shai Gilgeous-Alexander\gilgesh01				7		Jevon Carter		4.94989131	17	
+8		Mikal Bridges	0.455616303	2		8	Miles Bridges\bridgmi02				8		Omari Spellman		4.880486853	15	
+9		Deandre Ayton	1.401240166	8		9	Jerome Robinson\robinje01				9		Jacob Evans		4.765113025	13	
+10		Grayson Allen	1.342635554	6		10	Troy Brown\browntr01				10		Shake Milton		4.301225281	28	
+11		Miles Bridges	1.344798022	3		11	Zhaire Smith\smithzh01				11		Keita Bates-Diop		4.098643436	23	
+12		Kevin Knox	1.043121941	7		12	Donte DiVincenzo\divindo01				12		Grayson Allen		3.687432999	4	
+13		Vince Edwards	0.848868246	24		13	Lonnie Walker\walkelo01				13		Landry Shamet		3.351553444	7	
+14		Robert Williams	6.295670871	7		14	Kevin Huerter\huertke01				14		Mikal Bridges		3.227154908	8	
+15		Jevon Carter	2.31604962	9		15	Josh Okogie\okogijo01				15		Shai Gilgeous-Alexander		2.993850635	8	
+16		De'Anthony Melton	1.889179175	16		16	Grayson Allen\allengr01				16		Jalen Brunson		2.513725618	9	
+17		Omari Spellman	0.428622855	6		17	Chandler Hutchison\hutchch01				17		Moritz Wagner		2.495554629	2	
+18		Josh Okogie	1.276033833	3		18	Aaron Holiday\holidaa01				18		Miles Bridges		2.46481831	10	
+19		Donte DiVincenzo	0.993041133	7		19	Moritz Wagner\wagnemo01				19		De'Anthony Melton		2.37492019	13	
+20		Moritz Wagner	0.447215738	1		20	Landry Shamet\shamela01				20		Chimezie Metu		2.18675712	15	
+21		Chimezie Metu	0.987114653	14		21	Robert Williams\williro04				21		Collin Sexton		1.977495049	17	
+22		Troy Brown	0.236784105	12		22	Jacob Evans\evansja02				22		Trae Young		1.818225391	20	
+23		Thomas Welsh	0.218426043	16		23	Omari Spellman\spellom01				23		Devonte' Graham		1.791363642	3	
+24		Shake Milton	0.018849474	14		24	Jevon Carter\carteje01				24		Josh Okogie		1.408305351	9	
+25		Kevin Huerter	0.017816022	11		25	Jalen Brunson\brunsja01				25		Robert Williams		1.212419376	4	
+26		Landry Shamet	0.00398558	6		26	Devonte' Graham\grahade01				26		Kevin Knox		1.086329749	21	
+27		Shai Gilgeous-Alexander	0.000182664	20		27	Melvin Frazier\frazime01				27		Donte DiVincenzo		0.999564677	15	
+28		Jalen Brunson	0.165407436	3		28	Khyri Thomas\thomakh01				28		Vince Edwards		0.88402975	9	
+29		Collin Sexton	0.016313954	25		29	Jarred Vanderbilt\vandeja01				29		Thomas Welsh		0.867487923	10	
+30		Trae Young	0.390237964	28		30	Bruce Brown\brownbr01				30		Kevin Huerter		0.584780292	16	
+31		Devonte' Graham	0.000391299	5		31	Hamidou Diallo\diallha01				31		Troy Brown		0.236803466	21	
+32		George King	-0.000294549	8		32	De'Anthony Melton\meltode01				32		Chandler Hutchison		-0.069048667	15	
+33		Chandler Hutchison	-2.51E-06	16		33	Sviatoslav Mykhailiuk\mykhasv01				33		George King		-0.335399486	7	
+34		Melvin Frazier	-5.58E-05	7		34	Keita Bates-Diop\bateske01				34		Lonnie Walker		-0.596381359	21	
+35		Lonnie Walker	-0.001837534	22		35	Chimezie Metu\metuch01				35		Khyri Thomas		-0.967601387	7	
+36		Aaron Holiday	-0.007218592	18		36	Alize Johnson\johnsal02				36		Hamidou Diallo		-2.386839397	5	
+37		Kostas Antetokounmpo	-0.001965712	4		37	Vince Edwards\edwarvi01				37		Jerome Robinson		-2.74138916	28	
+38		Khyri Thomas	-0.352314476	10		38	Shake Milton\miltosh01				38		Melvin Frazier		-2.74261419	11	
+39		Hamidou Diallo	-0.869074893	8		39	Thomas Welsh\welshth01				39		Sviatoslav Mykhailiuk		-3.128509426	6	
+40		Jerome Robinson	-0.003131564	31		40	George King\kingge03				40		Aaron Holiday		-3.419698811	22	
+41		Sviatoslav Mykhailiuk	-0.009639374	8		41	Kostas Antetokounmpo\antetko01				41		Kostas Antetokounmpo		-7.700082371	0	
+				528												530	
+				12.87804878												12.92682927	
+				21 within 10												14 within 10	
+				8 within 5	0.20											9 within 5	0.219512195
+				32 within 20												28 within 20	
